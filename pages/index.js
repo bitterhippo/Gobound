@@ -1,3 +1,6 @@
+//firebase
+import firebase from "../firebase/firebase";
+
 //Subcomponent imports
 import Navbar from "../components/Navbars/Navbars";
 
@@ -10,6 +13,9 @@ function HomePage() {
         padding: 0px;
       }
     `}</style>
+    <script>
+      
+    </script>
     <Navbar />
     Welcome to Next.js!
   </div>
