@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 //Subcomponent imports
 import Navbar from "../components/Navbars/Navbars";
 import Dropdown from "../components/Dropdowns/Dropdown";
@@ -12,10 +14,11 @@ function HomePage() {
       }
     `}</style>
     <Navbar />
-    <div style={styles.indexContet}>
+    {/* main content will go here */}
+    <div style={styles.indexContent}>
       GoBound dashboard - under construction
+      <Dropdown />
     </div>
-    <Dropdown />
   </div>
 }
 
@@ -25,7 +28,7 @@ const styles = {
   },
   indexContent: {
     marginLeft: 20,
-    marginTop: '3vh'
+    marginTop: "3vh"
   }
 }
 
