@@ -1,8 +1,6 @@
-//firebase
-import firebase from "../firebase/firebase";
-
 //Subcomponent imports
 import Navbar from "../components/Navbars/Navbars";
+import Dropdown from "../components/Dropdowns/Dropdown";
 
 function HomePage() {
   return <div style={styles.MainWrapper}>
@@ -18,6 +16,7 @@ function HomePage() {
     </script>
     <Navbar />
     Welcome to Next.js!
+    <Dropdown />
   </div>
 }
 
