@@ -48,7 +48,7 @@ const styles = {
     width: 200,
     opacity: 0.6,
     zIndex: 1,
-    border: '1px solid black'
+    border: '1px solid black',
   },
 }
 

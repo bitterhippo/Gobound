@@ -13,7 +13,7 @@ const StyledLink = ({ name, to }) => {
 
 const styles = {
   link: {
-    textDecoration: 'none'
+    textDecoration: 'none',
   },
   linkText: {
     color: 'white'

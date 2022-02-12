@@ -11,11 +11,10 @@ function HomePage() {
         padding: 0px;
       }
     `}</style>
-    <script>
-      
-    </script>
     <Navbar />
-    Welcome to Next.js!
+    <div style={styles.indexContet}>
+      GoBound dashboard - under construction
+    </div>
     <Dropdown />
   </div>
 }
@@ -23,6 +22,10 @@ function HomePage() {
 const styles = {
   mainWrapper: {
     padding: -5,
+  },
+  indexContent: {
+    marginLeft: 20,
+    marginTop: '3vh'
   }
 }
 

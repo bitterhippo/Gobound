@@ -7,7 +7,7 @@ const Navbar = ({ loggedIn }) => {
   return <div style={styles.navbarMainWrap}>
     <div style={styles.navbarContent}>
       <div style={styles.navbarItems}><StyledLink to={"/about"} name={"About"} /></div>
-      <div style={styles.navbarItems}>{!loggedIn && <StyledButton>Log In</StyledButton>}</div>
+      <div style={{...styles.navbarItems, marginTop: 5}}>{!loggedIn && <StyledButton>Log In</StyledButton>}</div>
     </div>
   </div>
 }
