@@ -3,6 +3,8 @@ import Colors from "../Colors";
 
 const Dropdown = ({ options }) => {
 
+  //Component currently isn't using props values and instead using the defaults provided on line 11.
+
   const [toggleOpen, setToggleOpen] = useState(false);
   const [hoverdItem, setHoveredItem] = useState('');
 
@@ -23,9 +25,12 @@ const Dropdown = ({ options }) => {
 
   return (
     <div
-      style={styles.dropdownMainWrapper}
-      onClick={() => setToggleOpen(!toggleOpen)}>
-      TEST
+      style={styles.dropdownMainWrapper}>
+      <div
+      onClick={() => setToggleOpen(!toggleOpen)}
+      >
+        TEST
+      </div>
       {toggleOpen && openDiv()}
     </div >
   )

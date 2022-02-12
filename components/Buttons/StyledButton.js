@@ -17,7 +17,6 @@ const styles = {
     color: 'white',
     backgroundColor: Colors.Secondary,
     width: 100,
-    margin: '5px 0',
     padding: '5px 5px'
   }
 };
