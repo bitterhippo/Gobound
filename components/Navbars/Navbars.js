@@ -3,16 +3,15 @@ import Colors from '../Colors';
 import StyledButton from '../Buttons/StyledButton';
 import StyledLink from '../StyledLink/StyledLink';
 
-const Navbar = ({ loggedIn }) => {
+const Navbar = ({ loggedIn, links }) => {
   return <div style={styles.navbarMainWrap}>
     <div style={styles.navbarContent}>
       <div style={styles.navLinksContainer}>
-        <div style={styles.navbarItems}>
-          <StyledLink to={"/jobs"} name={"Jobs"} />
-        </div>
-        <div style={styles.navbarItems}>
-          <StyledLink to={"/personel"} name={"Personel"} />
-        </div>
+        {
+          links.map(currentLink => <div style={styles.navbarItems}>
+            <StyledLink to={`/${currentLink}`} name={`${currentLink.charAt(0).toUpperCase() + currentLink.slice(1, currentLink.length)}`} />
+          </div>)
+        }
       </div>
       <div style={{ ...styles.navbarItems, marginTop: 5 }}>{!loggedIn && <StyledButton>Log In</StyledButton>}</div>
     </div>

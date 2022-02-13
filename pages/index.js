@@ -13,7 +13,7 @@ function HomePage() {
         padding: 0px;
       }
     `}</style>
-    <Navbar />
+    <Navbar links={['jobs','personel']}/>
     {/* main content will go here */}
     <div style={styles.indexContent}>
       GoBound dashboard - under construction
