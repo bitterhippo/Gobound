@@ -6,8 +6,15 @@ import StyledLink from '../StyledLink/StyledLink';
 const Navbar = ({ loggedIn }) => {
   return <div style={styles.navbarMainWrap}>
     <div style={styles.navbarContent}>
-      <div style={styles.navbarItems}><StyledLink to={"/about"} name={"About"} /></div>
-      <div style={{...styles.navbarItems, marginTop: 5}}>{!loggedIn && <StyledButton>Log In</StyledButton>}</div>
+      <div style={styles.navLinksContainer}>
+        <div style={styles.navbarItems}>
+          <StyledLink to={"/jobs"} name={"Jobs"} />
+        </div>
+        <div style={styles.navbarItems}>
+          <StyledLink to={"/personel"} name={"Personel"} />
+        </div>
+      </div>
+      <div style={{ ...styles.navbarItems, marginTop: 5 }}>{!loggedIn && <StyledButton>Log In</StyledButton>}</div>
     </div>
   </div>
 }
@@ -29,6 +36,11 @@ const styles = {
   },
   navbarItems: {
     marginTop: 'auto'
+  },
+  navLinksContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 50
   }
 };
 
