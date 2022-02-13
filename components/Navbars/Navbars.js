@@ -9,7 +9,7 @@ const Navbar = ({ loggedIn, links }) => {
       <div style={styles.navLinksContainer}>
         {
           links.map(currentLink => <div style={styles.navbarItems}>
-            <StyledLink to={`/${currentLink}`} name={`${currentLink.charAt(0).toUpperCase() + currentLink.slice(1, currentLink.length)}`} />
+            <StyledLink to={currentLink.to} name={currentLink.name} />
           </div>)
         }
       </div>
