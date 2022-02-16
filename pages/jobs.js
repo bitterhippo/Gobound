@@ -1,3 +1,5 @@
+import defaultData from "../components/DefaultData";
+
 function Jobs() {
 
   const data = [
@@ -21,6 +23,20 @@ function Jobs() {
         <th>Preferred Skills / 歓迎スキル</th>
       </tr>
       {/* Data to go here */}
+      {
+        defaultData.map(({company, hp, career, position, jd, age, income, japanese, conditions, preferredSkills}) => <tr>
+          <th>{company}</th>
+          <th>{hp}</th>
+          <th>{career}</th>
+          <th>{position}</th>
+          <th>{jd}</th>
+          <th>{age}</th>
+          <th>{income}</th>
+          <th>{japanese}</th>
+          <th>{conditions}</th>
+          <th>{preferredSkills}</th>
+        </tr>)
+      }
     </table>
   </div>
 };
