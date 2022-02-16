@@ -20,11 +20,13 @@ function Jobs() {
         <th>Country</th>
       </tr>
       {/* Data to go here */}
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Andes</td>
-        <td>Germany</td>
-      </tr>
+      {
+        data.map(({name, contract, country}) => <tr>
+          <td>{name}</td>
+          <td>{contract}</td>
+          <td>{country}</td>
+        </tr>)
+      }
     </table>
   </div>
 };
