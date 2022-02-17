@@ -1,16 +1,16 @@
 const CustomTable = ({ tableData }) => {
 
   const tableDefaults = [
-    'Company / 企業名',
-    'HP / 企業URL',
-    'Career / 新卒/中途',
-    'Position / ポジション',
-    'JD / 求人URL',
-    'Age / 年齢',
-    'Income / 年収',
-    'Japanese /日本語',
-    'Conditions / 必須条件',
-    'Preferred Skills / 歓迎スキル'
+    'Company/企業名',
+    'HP/企業URL',
+    'Career/新卒/中途',
+    'Position/ポジション',
+    'JD/求人URL',
+    'Age/年齢',
+    'Income/年収',
+    'Japanese/日本語',
+    'Conditions/必須条件',
+    'Preferred Skills/歓迎スキル'
   ];
 
   console.log(tableData);
@@ -19,9 +19,12 @@ const CustomTable = ({ tableData }) => {
     <div style={styles.tableHeader}>
       {
         tableDefaults.map((ci, i) => <div
+          style={styles.tableHeaderCells}
           key={i}
         >
-          {ci}
+          {ci.split('/')[0]}
+          <br></br>
+          {ci.split('/')[1]}
         </div>)
       }
     </div>
@@ -34,6 +37,9 @@ const styles = {
     fleDirection: 'row',
     justifyContent: 'spaceEvenly'
   },
+  tableHeaderCells: {
+    fontSize: 14
+  }
 };
 
 export default CustomTable;
