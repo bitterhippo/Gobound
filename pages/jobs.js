@@ -1,8 +1,13 @@
+import { Main } from 'next/document';
 import { useState, useEffect } from 'react';
 
 
 //Subcomponents
 import defaultData from "../components/DefaultData";
+import Navbar from '../components/Navbars/Navbars';
+import MainScreen from '../components/PPC/MainScreen';
+
+//KNOWN BUG: This page is not correctly rendering data as the result of a "Hydration" issue. remember to water your components.
 
 function Jobs() {
 
@@ -24,8 +29,15 @@ function Jobs() {
     { name: 'lolbert2', contract: 'some dumb shit', country: 'amerika' }
   ];
 
+  const navDefaults = [
+    { to: '/', name: 'Home' },
+    { to: '/personel', name: 'Personel' }
+  ];
+
 
   return <div>
+    <MainScreen>
+    <Navbar links={navDefaults} />
     <table>
       <tr>
         <th>Company / 企業名</th>
@@ -41,7 +53,9 @@ function Jobs() {
       </tr>
       {/* Data to go here */}
       {
-        defaultData.map(({ company, hp, career, position, jd, age, income, japanese, conditions, preferredSkills }) => <tr>
+        defaultData.map(({ company, hp, career, position, jd, age, income, japanese, conditions, preferredSkills }) => <tr
+          key={`${company}-${position}`}
+        >
           <th>{company}</th>
           <th>{hp}</th>
           <th>{career}</th>
@@ -55,6 +69,7 @@ function Jobs() {
         </tr>)
       }
     </table>
+    </MainScreen>
   </div>
 };
 
