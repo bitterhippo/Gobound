@@ -8,8 +8,12 @@ const Navbar = ({ loggedIn, links }) => {
     <div style={styles.navbarContent}>
       <div style={styles.navLinksContainer}>
         {
-          links.map(currentLink => <div style={styles.navbarItems}>
-            <StyledLink to={currentLink.to} name={currentLink.name} />
+          links.map(currentLink => <div
+            key={`${currentLink.name}`}
+            style={styles.navbarItems}>
+            <StyledLink
+              to={currentLink.to}
+              name={currentLink.name} />
           </div>)
         }
       </div>
