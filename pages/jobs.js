@@ -1,12 +1,29 @@
+import { useState, useEffect } from 'react';
+
+
+//Subcomponents
 import defaultData from "../components/DefaultData";
 
 function Jobs() {
+
+  const [apiData, setApiData] = useState();
+
+  useEffect(() => {
+    fetch('https://swapi.dev/api/people/1')
+      .then((res) => res.json())
+      .then((json) => setApiData(json))
+  }, []);
+
+  useEffect(() => {
+    console.log(apiData)
+  }, [apiData]);
 
   const data = [
     { name: 'lolbert', contract: 'some dumb shit', country: 'amerika' },
     { name: 'lolbert1', contract: 'some dumb shit', country: 'amerika' },
     { name: 'lolbert2', contract: 'some dumb shit', country: 'amerika' }
   ];
+
 
   return <div>
     <table>
@@ -24,7 +41,7 @@ function Jobs() {
       </tr>
       {/* Data to go here */}
       {
-        defaultData.map(({company, hp, career, position, jd, age, income, japanese, conditions, preferredSkills}) => <tr>
+        defaultData.map(({ company, hp, career, position, jd, age, income, japanese, conditions, preferredSkills }) => <tr>
           <th>{company}</th>
           <th>{hp}</th>
           <th>{career}</th>

@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 //Subcomponent imports
 import Navbar from "../components/Navbars/Navbars";
 import Dropdown from "../components/Dropdowns/Dropdown";
