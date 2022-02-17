@@ -1,5 +1,6 @@
 import { Main } from 'next/document';
 import { useState, useEffect } from 'react';
+import CustomTable from '../components/Tables/CustomTable';
 
 
 //Subcomponents
@@ -38,37 +39,7 @@ function Jobs() {
   return <div>
     <MainScreen>
     <Navbar links={navDefaults} />
-    <table>
-      <tr>
-        <th>Company / 企業名</th>
-        <th>HP / 企業URL</th>
-        <th>Career / 新卒/中途</th>
-        <th>Position / ポジション</th>
-        <th>JD / 求人URL</th>
-        <th>Age / 年齢</th>
-        <th>Income / 年収</th>
-        <th>Japanese /日本語</th>
-        <th>Conditions / 必須条件</th>
-        <th>Preferred Skills / 歓迎スキル</th>
-      </tr>
-      {/* Data to go here */}
-      {
-        defaultData.map(({ company, hp, career, position, jd, age, income, japanese, conditions, preferredSkills }) => <tr
-          key={`${company}-${position}`}
-        >
-          <th>{company}</th>
-          <th>{hp}</th>
-          <th>{career}</th>
-          <th>{position}</th>
-          <th>{jd}</th>
-          <th>{age}</th>
-          <th>{income}</th>
-          <th>{japanese}</th>
-          <th>{conditions}</th>
-          <th>{preferredSkills}</th>
-        </tr>)
-      }
-    </table>
+      <CustomTable />
     </MainScreen>
   </div>
 };
