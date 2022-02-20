@@ -1,6 +1,6 @@
 //Subcomponents Data
 import Colors from "../Colors";
-import TableRow from "./TableRow";
+import JobsCard from "./JobsCard";
 
 const CustomTable = ({ tableData }) => {
 
@@ -21,43 +21,13 @@ const CustomTable = ({ tableData }) => {
 
   return (
     <>
-      <div style={styles.tableHeader}>
-        {
-          tableDefaults.map((ci, i) => <div
-            style={styles.tableHeaderCells}
-            key={i}
-          >
-            {ci.split('/')[0]}
-            <br></br>
-            {ci.split('/')[1]}
-          </div>)
-        }
-      </div>
-      <div>
-        {!tableData && <div> No table data detected </div>}
-        {tableData && <div>
-          {
-            tableData.map(jobListingData => <TableRow 
-              jobsData={jobListingData}
-            />)
-          }
-        </div>}
-      </div>
+      {tableData.map(cv => <JobsCard jobsData={cv}/>)}
     </>
   )
 };
 
 const styles = {
-  tableHeader: {
-    display: 'flex',
-    fleDirection: 'row',
-    justifyContent: 'space-evenly'
-  },
-  tableHeaderCells: {
-    fontSize: 14,
-    textAlign: 'center',
-    borderBottom: `1px solid ${Colors.Primary}`
-  }
+
 };
 
 export default CustomTable;
