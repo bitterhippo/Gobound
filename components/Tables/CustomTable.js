@@ -1,3 +1,6 @@
+import Colors from "../Colors";
+
+
 const CustomTable = ({ tableData }) => {
 
   const tableDefaults = [
@@ -35,10 +38,10 @@ const styles = {
   tableHeader: {
     display: 'flex',
     fleDirection: 'row',
-    justifyContent: 'spaceEvenly'
+    justifyContent: 'space-evenly'
   },
   tableHeaderCells: {
-    fontSize: 14
+    fontSize: 14,
   }
 };
 
