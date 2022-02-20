@@ -4,22 +4,24 @@ import StyledButton from '../Buttons/StyledButton';
 import StyledLink from '../StyledLink/StyledLink';
 
 const Navbar = ({ loggedIn, links }) => {
-  return <div style={styles.navbarMainWrap}>
-    <div style={styles.navbarContent}>
-      <div style={styles.navLinksContainer}>
-        {
-          links.map(currentLink => <div
-            key={`${currentLink.name}`}
-            style={styles.navbarItems}>
-            <StyledLink
-              to={currentLink.to}
-              name={currentLink.name} />
-          </div>)
-        }
+  return (
+    <div style={styles.navbarMainWrap}>
+      <div style={styles.navbarContent}>
+        <div style={styles.navLinksContainer}>
+          {
+            links.map(currentLink => <div
+              key={`${currentLink.name}`}
+              style={styles.navbarItems}>
+              <StyledLink
+                to={currentLink.to}
+                name={currentLink.name} />
+            </div>)
+          }
+        </div>
+        <div style={{ ...styles.navbarItems, marginTop: 5 }}>{!loggedIn && <StyledButton>Log In</StyledButton>}</div>
       </div>
-      <div style={{ ...styles.navbarItems, marginTop: 5 }}>{!loggedIn && <StyledButton>Log In</StyledButton>}</div>
     </div>
-  </div>
+  )
 }
 
 const styles = {

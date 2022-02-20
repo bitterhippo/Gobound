@@ -31,7 +31,7 @@ function Jobs() {
     <MainScreen>
       <Navbar links={navDefaults} />
       <ContentWrapper>
-        <CustomTable />
+        <CustomTable tableData={defaultData} />
       </ContentWrapper>
     </MainScreen>
   </div>

@@ -16,6 +16,13 @@ const CustomTable = ({ tableData }) => {
     'Preferred Skills/歓迎スキル'
   ];
 
+  const renderTable = (tableData) => {
+    return (
+      <div>
+
+      </div>
+    )
+  }
   console.log(tableData);
 
   return (
@@ -30,6 +37,8 @@ const CustomTable = ({ tableData }) => {
           {ci.split('/')[1]}
         </div>)
       }
+      { !tableData && <div> No table data detected </div> }
+      { tableData && renderTable() }
     </div>
   )
 };
@@ -42,6 +51,8 @@ const styles = {
   },
   tableHeaderCells: {
     fontSize: 14,
+    textAlign: 'center',
+    borderBottom: `1px solid ${Colors.Primary}`
   }
 };
 
