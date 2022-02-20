@@ -1,5 +1,6 @@
+//Subcomponents Data
 import Colors from "../Colors";
-
+import TableRow from "./TableRow";
 
 const CustomTable = ({ tableData }) => {
 
@@ -16,30 +17,33 @@ const CustomTable = ({ tableData }) => {
     'Preferred Skills/歓迎スキル'
   ];
 
-  const renderTable = (tableData) => {
-    return (
-      <div>
-
-      </div>
-    )
-  }
-  console.log(tableData);
+  //Main Render Function
 
   return (
-    <div style={styles.tableHeader}>
-      {
-        tableDefaults.map((ci, i) => <div
-          style={styles.tableHeaderCells}
-          key={i}
-        >
-          {ci.split('/')[0]}
-          <br></br>
-          {ci.split('/')[1]}
-        </div>)
-      }
-      { !tableData && <div> No table data detected </div> }
-      { tableData && renderTable() }
-    </div>
+    <>
+      <div style={styles.tableHeader}>
+        {
+          tableDefaults.map((ci, i) => <div
+            style={styles.tableHeaderCells}
+            key={i}
+          >
+            {ci.split('/')[0]}
+            <br></br>
+            {ci.split('/')[1]}
+          </div>)
+        }
+      </div>
+      <div>
+        {!tableData && <div> No table data detected </div>}
+        {tableData && <div>
+          {
+            tableData.map(jobListingData => <TableRow 
+              jobsData={jobListingData}
+            />)
+          }
+        </div>}
+      </div>
+    </>
   )
 };
 
