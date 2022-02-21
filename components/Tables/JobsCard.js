@@ -13,22 +13,34 @@ const JobsCard = ({ jobsData }) => {
     'Preferred Skills/歓迎スキル'
   ];
 
-  let { company, hp, career, position, jd, age, income, japanese, conditions, prefferedSkills } = jobsData;
+  let { company, hp, career, position, jd, age, income, japanese, conditions, skills } = jobsData;
 
 
   return (
 
     <div style={styles.jobCardWrapper}>
       {/*     first row of card    */}
-      <div style={styles.headerRow}>
-        <div>
-          Company: {company}
-        </div>
-        <div>
-          HomePage: {hp}
-        </div>
+      <div style={styles.tableRow}>
+        <span>Company: {company}</span>
+        <span>Position: {position}</span>
+        <span>HomePage: {hp}</span>
       </div>
       {/*    second row of card    */}
+      <div style={styles.tableRow}>
+        <span>Career: {career}</span>
+        <span>Japanese: {japanese}</span>
+        <span>JD: {jd}</span>
+      </div>
+      {/*    third row of card    */}
+      <div style={styles.tableRow}>
+        <span>Age: {age}</span>
+        <span>Income: {income}</span>
+        <span>Preffered Skills: {skills}</span>
+      </div>
+      {/*    fourth row of card    */}
+      <div style={styles.tableRow}>
+        <span>Conditions: {conditions}</span>
+      </div>
     </div>
   )
 };
@@ -36,17 +48,19 @@ const JobsCard = ({ jobsData }) => {
 const styles = {
   jobCardWrapper: {
     display: 'flex',
-    justifyContent: 'column',
+    flexDirection: 'column',
     border: '1px solid black',
     backgroundColor: 'gray',
     padding: '10px 10px',
-    fontSize: 14
+    fontSize: 14,
+    borderRadius: 10,
+    gap: 10
   },
-  headerRow: {
+  tableRow: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between'
-  }
+  },
 };
 
 export default JobsCard;

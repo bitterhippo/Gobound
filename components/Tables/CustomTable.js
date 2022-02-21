@@ -21,7 +21,10 @@ const CustomTable = ({ tableData }) => {
 
   return (
     <>
-      {tableData.map(cv => <JobsCard jobsData={cv}/>)}
+      {tableData.map((cv, i) => <JobsCard 
+      key={i}
+      jobsData={cv}
+      />)}
     </>
   )
 };
