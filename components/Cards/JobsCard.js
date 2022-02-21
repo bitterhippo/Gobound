@@ -21,7 +21,7 @@ const JobsCard = ({ jobsData }) => {
     <div style={styles.jobCardWrapper}>
       {/*     first row of card    */}
       <div style={styles.tableRow}>
-        <span style={styles.left}>Company: {company}</span>
+        <span style={styles.left}>Company: <span style={{fontSize: 12}}>{company}</span></span>
         <span style={styles.middle}>Position: {position}</span>
         <span style={styles.right}>HomePage: {hp}</span>
       </div>
@@ -50,11 +50,12 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     border: '1px solid black',
-    backgroundColor: 'gray',
+    backgroundColor: '#FFE4C4',
     padding: '10px 10px',
     fontSize: 14,
     borderRadius: 10,
-    gap: 10
+    gap: 10,
+    width: 500
   },
   tableRow: {
     display: 'flex',

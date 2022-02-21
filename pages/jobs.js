@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import CustomTable from '../components/Tables/CustomTable';
+import JobsCardList from '../components/Cards/JobsCardList';
 
 
 //Subcomponents
@@ -31,7 +31,7 @@ function Jobs() {
     <MainScreen>
       <Navbar links={navDefaults} />
       <ContentWrapper>
-        <CustomTable tableData={defaultData} />
+        <JobsCardList tableData={defaultData} />
       </ContentWrapper>
     </MainScreen>
   </div>
