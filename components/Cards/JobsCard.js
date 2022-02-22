@@ -28,7 +28,7 @@ const JobsCard = ({ jobsData }) => {
           Company: 
           <StyledLink
           to={hp}
-          name={company} 
+          name={<span style={styles.smallText}>{company}</span>} 
           color={Colors.Secondary}
           />
         </div>
@@ -50,11 +50,11 @@ const JobsCard = ({ jobsData }) => {
       </div>
       {/*    third row of card    */}
       <div style={styles.tableRow}>
-        <span>Preffered Skills: {skills}</span>
+        <span>Prefered Skills: {skills}</span>
       </div>
       {/*    fourth row of card    */}
       <div style={styles.tableRow}>
-        <span>Conditions: {conditions}</span>
+        <span>Conditions: <span style={styles.smallText}>{conditions}</span></span>
       </div>
     </div>
   )
@@ -92,6 +92,9 @@ const styles = {
   linkDiv: {
     display: 'flex',
     flexDirecton: 'row'
+  },
+  smallText: {
+    fontSize: 12
   }
 };
 
