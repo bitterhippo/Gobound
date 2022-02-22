@@ -25,7 +25,7 @@ const JobsCard = ({ jobsData }) => {
       {/*     first row of card    */}
       <div style={styles.tableRow}>
         <div style={styles.linkDiv}>
-          Company: 
+          Company:<span style={styles.spacer}/>
           <StyledLink
           to={hp}
           name={<span style={styles.smallText}>{company}</span>} 
@@ -33,7 +33,7 @@ const JobsCard = ({ jobsData }) => {
           />
         </div>
         <div style={styles.linkDiv}>
-          Position: 
+          Position:<span style={styles.spacer}/> 
           <StyledLink
           to={jd}
           name={position}
@@ -77,24 +77,15 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  left: {
-    display: 'block',
-    textAlign: 'start'
-  },
-  middle: {
-    display: 'block',
-    textAlign: 'center'
-  },
-  right: {
-    display: 'block',
-    textAlign: 'end'
-  },
   linkDiv: {
     display: 'flex',
     flexDirecton: 'row'
   },
   smallText: {
     fontSize: 12
+  },
+  spacer: {
+    width: 5
   }
 };
 

@@ -2,7 +2,7 @@ const defaultData = [{
   company: '株式会社ホープス',
   hp: 'https://www.hopes-ise.co.jp/en/',
   career: 'Mid',
-  position: 'SE',
+  position: 'Software Engineer',
   jd: 'https://www.careercross.com/job/detail-1245466?sid=70375510&page=1',
   age: '20~28',
   income: '4.5 million yen',
