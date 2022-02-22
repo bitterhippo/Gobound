@@ -8,6 +8,7 @@ import Navbar from '../components/Navbars/Navbars';
 import MainScreen from '../components/PPC/MainScreen';
 import ContentWrapper from '../components/PPC/ContentWrapper';
 import Dropdown from '../components/Dropdowns/Dropdown';
+import JobsInput from '../components/Inputs/JobsInput';
 
 //KNOWN BUG: This page is not correctly rendering data as the result of a "Hydration" issue. remember to water your components.
 
@@ -31,6 +32,7 @@ function Jobs() {
     <MainScreen>
       <Navbar links={navDefaults} />
       <ContentWrapper>
+        <JobsInput />
         <JobsCardList tableData={defaultData} />
       </ContentWrapper>
     </MainScreen>
