@@ -1,3 +1,6 @@
+import Colors from "../Colors";
+import StyledLink from "../StyledLink/StyledLink";
+
 const JobsCard = ({ jobsData }) => {
 
   const tableDefaults = [
@@ -21,20 +24,32 @@ const JobsCard = ({ jobsData }) => {
     <div style={styles.jobCardWrapper}>
       {/*     first row of card    */}
       <div style={styles.tableRow}>
-        <span style={styles.left}>Company: <span style={{fontSize: 12}}>{company}</span></span>
-        <span style={styles.middle}>Position: {position}</span>
-        <span style={styles.right}>HomePage: {hp}</span>
+        <div style={styles.linkDiv}>
+          Company: 
+          <StyledLink
+          to={hp}
+          name={company} 
+          color={Colors.Secondary}
+          />
+        </div>
+        <div style={styles.linkDiv}>
+          Position: 
+          <StyledLink
+          to={jd}
+          name={position}
+          color={Colors.Secondary}
+        />
+        </div>
       </div>
       {/*    second row of card    */}
       <div style={styles.tableRow}>
         <span>Career: {career}</span>
         <span>Japanese: {japanese}</span>
-        <span>JD: {jd}</span>
+        <span>Income: {income}</span>
+        <span>Age: {age}</span>
       </div>
       {/*    third row of card    */}
       <div style={styles.tableRow}>
-        <span>Age: {age}</span>
-        <span>Income: {income}</span>
         <span>Preffered Skills: {skills}</span>
       </div>
       {/*    fourth row of card    */}
@@ -60,6 +75,7 @@ const styles = {
   tableRow: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   left: {
     display: 'block',
@@ -72,6 +88,10 @@ const styles = {
   right: {
     display: 'block',
     textAlign: 'end'
+  },
+  linkDiv: {
+    display: 'flex',
+    flexDirecton: 'row'
   }
 };
 

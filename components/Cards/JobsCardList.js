@@ -1,5 +1,4 @@
 //Subcomponents Data
-import Colors from "../Colors";
 import JobsCard from "./JobsCard";
 
 const JobsCardList = ({ tableData }) => {
