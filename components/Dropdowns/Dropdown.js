@@ -1,19 +1,18 @@
 import { useState } from "react";
 import Colors from "../Colors";
 
-const Dropdown = ({ options }) => {
+const Dropdown = ({ name, options }) => {
 
   //Component currently isn't using props values and instead using the defaults provided on line 11.
 
   const [toggleOpen, setToggleOpen] = useState(false);
   const [hoverdItem, setHoveredItem] = useState('');
 
-  const defaults = ['Lol', 'Does', 'This', 'Work'];
-
   const openDiv = () => {
+
     return <div style={styles.containerOpen}>
       {
-        defaults.map(current => <div
+        options.map(current => <div
         key={current}
         onMouseEnter={() => setHoveredItem(current)}
         onMouseLeave={() => setHoveredItem('')}
@@ -21,6 +20,7 @@ const Dropdown = ({ options }) => {
         >{current}</div>)
       }
     </div>
+    
   }
 
   return (
@@ -29,7 +29,7 @@ const Dropdown = ({ options }) => {
       <div
       onClick={() => setToggleOpen(!toggleOpen)}
       >
-        TEST
+        { name }
       </div>
       {toggleOpen && openDiv()}
     </div >
@@ -38,10 +38,11 @@ const Dropdown = ({ options }) => {
 
 const styles = {
   dropdownMainWrapper: {
-
+    cursor: 'pointer'
   },
   containerOpen: {
     display: 'flex',
+    position: 'absolute',
     flexDirection: 'column',
     backgroundColor: Colors.Secondary,
     color: 'white',
@@ -49,6 +50,7 @@ const styles = {
     opacity: 0.6,
     zIndex: 1,
     border: '1px solid black',
+    cursor: 'pointer'
   },
 }
 

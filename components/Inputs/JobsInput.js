@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import Colors from '../Colors';
 
+//Subcomponents
+
+import Dropdown from '../Dropdowns/Dropdown';
+
 const JobsInput = () => {
 
   const [selectedButton, setSelectedButton] = useState();
@@ -18,12 +22,17 @@ const JobsInput = () => {
     setInput(caller);
   }
 
-  //Button Defaults
+  //Defaults
 
   const buttonDefaults = [
-    { title: 'Option 1', key: 1, value: 'option1' },
-    { title: 'Option 2', key: 2, value: 'option2' }
+    { title: 'Ascending', key: 1, value: 'option1' },
+    { title: 'Descending', key: 2, value: 'option2' }
   ];
+
+  const dropDownDefaults = [
+    'Ascending',
+    'Descending'
+  ]
 
   //Testing block
 
@@ -34,6 +43,7 @@ const JobsInput = () => {
   console.log(input);
 
   return (
+
     <div style={styles.jobsInputWrapper}>
       <div style={styles.jobsInputRow}>
         <input
@@ -45,6 +55,10 @@ const JobsInput = () => {
           style={styles.jobsInputButton}
         >Submit
         </button>
+        <Dropdown 
+         name='Sorting Options'
+         options={dropDownDefaults}
+        />
       </div>
       <div style={styles.jobsInputButtons}>
         {
@@ -73,25 +87,32 @@ const styles = {
     height: 200,
     display: 'flex',
     flexDirection: 'column',
-  },
-  jobsInputButtons: {
-    display: 'flex',
-    flexDirection: 'row',
+    gap: 50
   },
   jobsInputRow: {
     display: 'flex',
     flexDirection: 'row',
     gap: 25
   },
+  //Radio Dials
+  jobsInputButtons: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  //Input Bar + Button
   jobsInput: {
-    width: 150
+    width: 150,
+    height: 20
   },
   jobsInputButton: {
     backgroundColor: Colors.Secondary,
     color: 'white',
     fontWeight: 'bold',
     borderRadius: '5px',
-    border: '1px solid black'
+    border: `1px solid ${Colors.Primary}`,
+    opacity: 0.6,
+    height: 25,
+    width: 70
   }
 };
 
